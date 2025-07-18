@@ -1,0 +1,577 @@
+/* 1. Reset e estilo base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  background: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), transparent);
+}
+
+.navbar .logo {
+  width: 80px;
+  height: auto;
+}
+
+.nav-links a,
+.dropbtn {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 12px;
+  padding: 6px 8px;
+  font-size: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color .25s;
+}
+
+.nav-links a:hover,
+.dropbtn:hover {
+  color: rgba(183, 0, 255, 0.6);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #222;
+  min-width: 160px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .45);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-bar {
+  width: 160px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background: #333;
+  color: #fff;
+}
+
+.assine-btn {
+  padding: 6px 16px;
+  background: rgba(183, 0, 255, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .25s;
+}
+
+.assine-btn:hover {
+  background: rgba(183, 0, 255, 0.8);
+}
+
+.user-profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.home-button {
+  background: none;
+  border: none;
+  color: #a44cff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.banner {
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  height: 500px;
+  margin-top: -60px;
+  padding-top: 60px;
+}
+
+.banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .3;
+  z-index: 0;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 50px;
+  max-width: 600px;
+}
+
+.banner-content h2 {
+  font-size: 24px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.banner-content h1 {
+  font-size: 40px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.banner-content h1 span {
+  color: cyan;
+}
+
+.banner-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.play-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(183, 0, 255, 0.6);
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background .25s;
+}
+
+.play-button:hover {
+  background: rgba(183, 0, 255, 0.8);
+}
+
+.filmes,
+.series,
+.terror {
+  padding: 40px 50px;
+}
+
+.filmes h2,
+.series h2,
+.terror h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.filmes-lista,
+.series-lista,
+.terror-lista {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 10px;
+  overflow-x: hidden;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+}
+
+.filmes-lista img,
+.series-lista img,
+.terror-lista img {
+  height: 320px;
+  width: 220px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform .3s;
+  cursor: pointer;
+}
+
+
+.filmes-lista img:hover,
+.series-lista img:hover,
+.terror-lista img:hover {
+  transform: scale(1.05);
+}
+
+/* Seta nova tentei botar encima mas só deu de lado */
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(183, 0, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(183, 0, 255, 0.8);
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.seta:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #a44cff;
+}
+
+.seta.esquerda {
+  left: 5px;
+}
+
+.seta.direita {
+  right: 5px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .search-bar {
+    width: 120px;
+  }
+
+  .banner-content {
+    padding: 30px 20px;
+  }
+
+  .banner-content h1 {
+    font-size: 30px;
+  }
+
+  .filmes,
+  .series,
+  .terror {
+    padding: 20px;
+  }
+}
+
+.categorias {
+  display: flex;
+  gap: 20px;
+  padding: 40px 50px;
+  background-color: rgba(15, 15, 15, 0.8);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.categoria-card {
+  flex: 1 1 300px;
+  max-width: 350px;
+  height: 220px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.categoria-card:hover {
+  transform: scale(1.03);
+}
+
+.categoria-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.categoria-card p {
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  color: #e0e0e0;
+}
+
+.categoria-card button {
+  align-self: flex-start;
+  background: rgba(183, 0, 255, 0.8);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.categoria-card button:hover {
+  background: rgba(183, 0, 255, 0.8);
+}
+
+/*Filme e series Css*/
+.destaque {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.destaque-bg .fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  z-index: 1;
+}
+
+.destaque-conteudo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  padding: 40px;
+}
+/*info do filme ou sr*/
+.poster img {
+  width: 235px; 
+  height: 330px; 
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+.poster img:hover {
+  transform: scale(1.03);
+}
+
+.info h2 {
+  font-size: 48px;
+  margin: 0 0 10px 0;
+}
+
+.info p {
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 10px;
+}
+
+.btn-assistir {
+  background-color:rgba(183, 0, 255, 0.8);
+  color: #000;
+  padding: 10px 22px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-assistir:hover {
+  background-color: rgba(183, 0, 255, 0.8);
+}
+
+/* rolagem dos banner*/
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: rgba(183, 0, 255, 0.8);
+}
+
+.slide-info {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  color: white;
+  max-width: 40%;
+  z-index: 3;
+  animation: fadeText 1s ease-in-out;
+}
+
+.slide-info h1 {
+  font-size: 3rem;
+  color: rgba(183, 0, 255, 0.8); /* deixei roxo mas pode mudar principalmentne o de baixo o azul */
+  margin: 0;
+}
+
+.slide-info h1 span {
+  color: #00ffff;
+}
+
+.slide-info h2 {
+  font-weight: bold;
+  color: #cccccc;
+  margin-bottom: 10px;
+}
+
+.slide-info p {
+  margin: 15px 0;
+  line-height: 1.4;
+}
+
+.play-button {
+  background: #8000ff;
+  border: none;
+  padding: 15px 18px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@keyframes fadeText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* pra deixar os banner com um filtro escuro pra n estourar seus olhos*/
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+  z-index: 2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #222;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
