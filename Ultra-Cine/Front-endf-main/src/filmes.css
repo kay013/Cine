@@ -65,7 +65,7 @@
 .banner-fundo img {
   width: 100%;
   height: auto;
-  filter: brightness(0.3); /* ou algo como opacity: 0.3 */
+  filter: brightness(0.3); 
   position: absolute;
   z-index: -1;
 }
