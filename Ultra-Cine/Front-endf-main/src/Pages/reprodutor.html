@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ultra Vision</title>
+  <link rel="stylesheet" href="/Front-endf-main/src/global.css">
+  <link rel="stylesheet" href="/Front-endf-main/src/video.css"> <!-- Novo CSS separado -->
+  <link rel="shortcut icon" href="/Front-endf-main/src/img/logo2.png" type="image/x-icon">
+</head>
+
+<body>
+  <div class="video-player">
+    <img src="/Front-endf-main/src/img/logo2.png" alt="Ultra Vision" class="logo-player">
+    <a href="padraoF.html" class="voltar">← Voltar</a>
+    <select id="qualidade" class="qualidade-selector">
+    <option value="/Front-endf-main/src/videos/videoplayback.mp4">Dublado - DUB</option>
+    <option value="/Front-endf-main/src/videos/videoplayback-leg.mp4">Legendado - LEG</option>
+    </select>
+
+    <video id="player" controls poster="/Front-endf-main/src/img/capa-filme.jpg">
+    <source src="/Front-endf-main/src/videos/videoplayback.mp4" type="video/mp4">
+    Seu navegador não suporta a reprodução de vídeos.
+    </video>
+  </div>
+
+  <script>
+    const seletor = document.getElementById('qualidade');
+    const video = document.getElementById('player');
+
+    seletor.addEventListener('change', () => {
+      const novaFonte = seletor.value;
+      video.src = novaFonte;
+      video.load();
+      video.play();
+    });
+  </script>
+</body>
+</html>
