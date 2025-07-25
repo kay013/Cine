@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultra Vision</title>
-  <link rel="stylesheet" href="/Front-endf-main/src/style.css">
-  <link rel="shortcut icon" href="/Front-endf-main/src/img/logo2.png" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultra Vision</title>
+<link rel="stylesheet" href="/Front-endf-main/src/inter.css">
+<link rel="shortcut icon" href="/Front-endf-main/src/img/logo2.png" type="image/x-icon">
 </head>
-<body>
-    <header class="navbar">
-        <img src="/Front-endf-main/src/img/logo2.png" alt="Logo Ultra Vision" class="logo">
-        <button class="home-button">
-            <i class="fi fi-rr-list"></i>
-        </button>
-    </header>
 
-    <form action="/Front-endf-main/Pages/index.html">
-        <h1>Assine agora</h1>
-        <p>Assine agora e aproveite os melhores filmes e séries do momento.</p><br>
-        <input type="text" placeholder="Nome">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Senha">
-        <input type="password" placeholder="Confirme a senha"><br>
-        <button type="submit" class="assine-btn">Entrar</button><br>
-        <p>Ao assinar, você concorda com os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a>.</p><br>
-        <p>Já tem uma conta? <a href="/Front-endf-main/login.html">Entrar</a></p>
-        <p>Esqueceu sua senha? <a href="register.html">Recuperar senha</a></p>
-    </form>
+<body>
     
+    <div class="form-container">
+        <form action="/Front-endf-main/Pages/index.html">
+            <img src="/Front-endf-main/src/img/logo2.png" alt="Logo Ultra Vision" class="form-logo">
+            <h1>Assine agora</h1>
+            <p>Assine agora e aproveite os melhores filmes e séries do momento.</p><br>
+            <input type="text" placeholder="Nome">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Senha">
+            <input type="password" placeholder="Confirme a senha"><br>
+            <button type="submit" class="assine-btn">Entrar</button><br>
+            <p>Ao assinar, você concorda com os <a href="#">Termos de Uso</a> e a <a href="#">Política de
+                    Privacidade</a>.</p><br>
+            <p>Já tem uma conta? <a href="/Front-endf-main/login.html">Entrar</a></p>
+            <p>Esqueceu sua senha? <a href="register.html">Recuperar senha</a></p>
+        </form>
+    </div>
 
     <script>
         const form = document.querySelector('form');
@@ -46,4 +44,5 @@
         });
     </script>
 </body>
+
 </html>

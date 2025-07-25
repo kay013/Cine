@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Ultra Vision</title>
-  <link rel="stylesheet" href="/Front-endf-main/src/style.css">
-  <link rel="shortcut icon" href="/Front-endf-main/src/img/logo2.png" type="image/x-icon">
+<meta charset="UTF-8">
+<title>Ultra Vision</title>
+<link rel="stylesheet" href="/Front-endf-main/src/global.css">
+<link rel="shortcut icon" href="/Front-endf-main/src/img/logo2.png" type="image/x-icon">
 </head>
 
 <body>
@@ -20,24 +19,16 @@
       <a href="filmes.html">Filmes</a>
       <a href="series.html">Séries</a>
       <div class="dropdown">
-        <button class="dropbtn">Mais Opções ▾</button>
+        <button class="dropbtn">Gêneros ▾</button>
         <div class="dropdown-content">
-          <a href="#">Lançamentos</a>
-          <a href="#">Top 10</a>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Gêneros</button>
-          <div class="dropdown-content">
             <a href="#">Ação</a>
             <a href="#">Terror</a>
             <a href="#">Crime</a>
             <a href="#">Fantasia</a>
             <a href="#">Mistério</a>
             <a href="#">Ficção cientifica</a>
-          </div>
         </div>
       </div>
-      <a href="#">Baixar o App</a>
     </nav>
 
     <div class="nav-right">
@@ -88,7 +79,7 @@
         <img src="/Front-endf-main/src/img/Ragnarok.jpeg" alt="Banner 3">
         <div class="overlay"></div>
         <div class="slide-info">
-          <h2>Mistério</h2>
+          <h2>MISTÉRIO</h2>
           <h1>RAGNAROK<br><span>2020</span></h1>
           <p>Edda, assolada por mudanças climáticas e poluição industrial, onde um jovem chamado Magne descobre ser a
             reencarnação do deus Thor e precisa lutar contra uma poderosa família de gigantes, os Jutul, que ameaçam a
@@ -101,7 +92,7 @@
         <img src="/Front-endf-main/src/img/operaçãoving.jpg" alt="Banner 3">
         <div class="overlay"></div>
         <div class="slide-info">
-          <h2>Lançamento</h2>
+          <h2>DESSE ANO</h2>
           <h1>OPERAÇÂO VINGANÇA<br><span>2025</span></h1>
           <p>Nulo</p>
           <button class="play-button">▶</button>
@@ -127,7 +118,7 @@
         <a href="#"><img src="/Front-endf-main/src/img/AlicePoster.jpg" alt="Filme 6"></a>
         <a href="#"><img src="/Front-endf-main/src/img/harrypotter3.jpg" alt="Filme 1"></a>
         <a href="#"><img src="/Front-endf-main/src/img/johnwick3.jpeg" alt="Filme 6"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/entremontnhas.jpeg" alt="Filme 6"></a>
+        <a href="padraoF.html"><img src="/Front-endf-main/src/img/entremontnhas.jpeg" alt="Filme 6"></a>
         <a href="#"><img src="/Front-endf-main/src/img/harrypotter6.jpg" alt="Filme 2"></a>
         <a href="#"><img src="/Front-endf-main/src/img/harrypotter4.jpg" alt="Filme 3"></a>
         <a href="#"><img src="/Front-endf-main/src/img/filme4.jpeg" alt="Filme 4"></a>
@@ -157,26 +148,65 @@
     </div>
   </section>
 
-  <section class="categorias">
-    <div class="categoria-card" style="background-image: url('/Front-endf-main/src/img/banner7.jpg')">
-      <h3>Filmes</h3>
-      <p>Filmes para se divertir enquanto aprende valores e lições ao lado da família.</p>
-      <button>Confira</button>
-    </div>
+  <section class="filmes">
+    <h2>Ação</h2>
+    <div class="carousel-wrapper">
+      <button class="seta esquerda">&#10094;</button>
 
-    <div class="categoria-card" style="background-image: url('/Front-endf-main/src/img/bannerseries.jpeg')">
-      <h3>Passar o tempo com séries</h3>
-      <p>passe seu tempo vendo as melhores séries.</p>
-      <button>Confira</button>
-    </div>
+      <div class="filmes-lista" id="filmes-scroll">
+        <a href="#"><img src="/Front-endf-main/src/img/AlicePoster.jpg" alt="Filme 6"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/harrypotter3.jpg" alt="Filme 1"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/johnwick3.jpeg" alt="Filme 6"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/entremontnhas.jpeg" alt="Filme 6"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/harrypotter6.jpg" alt="Filme 2"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/harrypotter4.jpg" alt="Filme 3"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/filme4.jpeg" alt="Filme 4"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/harry5.jpg" alt="Filme 5"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/johnwick4.jpeg" alt="Filme 6"></a>
+      </div>
 
-    <div class="categoria-card" style="background-image: url('/Front-endf-main/src/img/bannerterror.jpeg')">
-      <h3>Para perder o sono!</h3>
-      <p>O melhor do terror: Fantasmas, zumbis, demônios e bruxas... Você tem coragem?</p>
-      <button>Confira</button>
+      <button class="seta direita">&#10095;</button>
     </div>
   </section>
 
+  <section class="filmes">
+    <h2>Fantasia</h2>
+    <div class="carousel-wrapper">
+      <button class="seta esquerda">&#10094;</button>
+
+      <div class="filmes-lista" id="filmes-scroll">
+        <a href="#"><img src="/Front-endf-main/src/img/AlicePoster.jpg" alt="Filme 6"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/harrypotter3.jpg" alt="Filme 1"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/johnwick3.jpeg" alt="Filme 6"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/entremontnhas.jpeg" alt="Filme 6"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/harrypotter6.jpg" alt="Filme 2"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/harrypotter4.jpg" alt="Filme 3"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/filme4.jpeg" alt="Filme 4"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/harry5.jpg" alt="Filme 5"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/johnwick4.jpeg" alt="Filme 6"></a>
+      </div>
+
+      <button class="seta direita">&#10095;</button>
+    </div>
+  </section>
+
+  <section class="terror">
+    <h2>Ação</h2>
+    <div class="carousel-wrapper">
+      <button class="seta esquerda">&#10094;</button>
+
+      <div class="filmes-lista" id="filmes-scroll">
+        <a href="#"><img src="/Front-endf-main/src/img/filme7.jpeg" alt="Filme 1"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/filme2.jpg" alt="Filme 2"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/filme3.jpeg" alt="Filme 3"></a>
+        <a href="#"><img src="Front-endf-main/src/img/filme4.jpeg" alt="Filme 4"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/filme5.jpg" alt="Filme 5"></a>
+        <a href="#"><img src="/Front-endf-main/src/img/filme6.jpeg" alt="Filme 6"></a>
+      </div>
+
+      <button class="seta direita">&#10095;</button>
+    </div>
+  </section>
 
   <section class="terror">
     <h2>Terror</h2>
@@ -229,6 +259,20 @@
 
     setInterval(nextSlide, 4000); // está em quatro segundos a rolagemdo site
   </script>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('header.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.7)';
+      } else {
+        navbar.style.background = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.95), transparent)';
+        navbar.style.boxShadow = 'none';
+      }
+    });
+  </script>
+
 </body>
 
 </html>

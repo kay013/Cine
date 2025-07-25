@@ -1,0 +1,74 @@
+/* assine.css */
+body {
+  margin: 0;
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  background-color: #222;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px 20px;
+  width: 100%;
+  max-width: 400px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  box-sizing: border-box;
+}
+
+form h1 {
+  margin-top: 10px;
+  color: #aaa;
+}
+
+form p {
+  font-weight: normal;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.assine-btn {
+  background-color: #7700ff;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+form a {
+  color: #7700ff;
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+.form-logo {
+  width: 100px;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
