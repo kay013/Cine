@@ -573,7 +573,7 @@ header.navbar {
     linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
 }
 
-/* ✅ Degradê que sobe na parte de baixo do banner principal */
+/* sombra que sobe na parte de baixo do banner principal */
 .bottom-gradient {
   position: absolute;
   bottom: 0;
