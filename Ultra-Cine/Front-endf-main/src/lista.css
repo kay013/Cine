@@ -1,0 +1,53 @@
+body {
+  background-color: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #a126e0;
+  margin-bottom: 10px;
+}
+
+#minha-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.filme-item {
+  background-color: #111;
+  padding: 10px;
+  border-radius: 10px;
+  width: 160px;
+}
+
+.filme-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.filme-item p {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.filme-item button {
+  background: #8202d2;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filme-item button:hover {
+  background: #a347ff;
+}

@@ -16,11 +16,11 @@
     </button>
     <nav class="nav-links">
       <a href="index.html">Início</a>
-      <a href="filmes.html">Todos</a>
+      <a href="minhalista.html">Minha Lista</a>
       <div class="dropdown">
         <button class="dropbtn">Gêneros ▾</button>
         <div class="dropdown-content">
-            <a href="#">Terror</a>
+            <a href="terror.html">Terror</a>
             <a href="#">Sci-Fi</a>
             <a href="#">Psicológico</a>
             <a href="#">Futuristico</a>
@@ -248,6 +248,20 @@
       }
     });
   </script>
+
+  <script>
+  function adicionarAFavoritos(titulo, imagem) {
+    const lista = JSON.parse(localStorage.getItem('minhaLista')) || [];
+    if (lista.some(f => f.titulo === titulo)) {
+      alert('Esse filme já está na sua lista.');
+      return;
+    }
+    lista.push({ titulo, imagem });
+    localStorage.setItem('minhaLista', JSON.stringify(lista));
+    alert('Adicionado à sua lista!');
+  }
+</script>
+
 
 </body>
 

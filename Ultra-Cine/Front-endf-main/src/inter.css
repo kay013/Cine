@@ -1,26 +1,36 @@
-/* tava dando conflito com a home por causa do body, ai separei o login e o cadastro */
 body {
   margin: 0;
-  background-color: #000;
   font-family: Arial, sans-serif;
+  background-color: #000;
+  height: 100vh;
+}
+
+.signup-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.form-container {
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
+  background: linear-gradient(to right, #000 80%, transparent 100%);
+  z-index: 3;
 }
 
 form {
   background-color: #222;
-  border: 1px solid #fff;
   border-radius: 10px;
-  padding: 5px 20px;
-  width: 100%;
-  max-width: 400px;
+  padding: 30px 20px;
+  width: 350px;
   color: #fff;
   text-align: center;
   font-weight: bold;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  box-sizing: border-box;
+  box-shadow: 0 0 10px #7700ff;
 }
 
 form h1 {
@@ -71,4 +81,32 @@ form a:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.image-side {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  filter: grayscale(100%) brightness(0.5);
+}
+
+.image-side::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0.8) 20%, transparent 60%);
+  z-index: 2;
 }

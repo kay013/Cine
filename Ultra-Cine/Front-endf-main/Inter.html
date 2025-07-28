@@ -1,48 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ultra Vision</title>
-<link rel="stylesheet" href="/Front-endf-main/src/inter.css">
-<link rel="shortcut icon" href="/Front-endf-main/src/img/logo2.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultra Vision - Assine agora</title>
+  <link rel="stylesheet" href="/Front-endf-main/src/inter.css" />
+  <link rel="shortcut icon" href="/Front-endf-main/src/img/logo2.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" /> <!-- Link para o CSS adaptado -->
 </head>
 
 <body>
+  <div class="signup-container">
     
     <div class="form-container">
-        <form action="/Front-endf-main/Pages/index.html">
-            <img src="/Front-endf-main/src/img/logo2.png" alt="Logo Ultra Vision" class="form-logo">
-            <h1>Assine agora</h1>
-            <p>Assine agora e aproveite os melhores filmes e séries do momento.</p><br>
-            <input type="text" placeholder="Nome">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Senha">
-            <input type="password" placeholder="Confirme a senha"><br>
-            <button type="submit" class="assine-btn">Entrar</button><br>
-            <p>Ao assinar, você concorda com os <a href="#">Termos de Uso</a> e a <a href="#">Política de
-                    Privacidade</a>.</p><br>
-            <p>Já tem uma conta? <a href="/Front-endf-main/login.html">Entrar</a></p>
-            <p>Esqueceu sua senha? <a href="register.html">Recuperar senha</a></p>
-        </form>
+      <form action="/Front-endf-main/Pages/index.html">
+        <img src="/Front-endf-main/src/img/logo2.png" alt="Logo Ultra Vision" class="form-logo" />
+        <h1>Assine agora</h1>
+        <p>Prepare a pipoca. O espetáculo começa com um clique.</p><br>
+
+        <input type="text" placeholder="Nome" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Senha" />
+        <input type="password" placeholder="Confirme a senha" /><br>
+
+        <button type="submit" class="assine-btn">Entrar</button><br>
+
+        <p style="font-weight: normal;">
+          Ao assinar, você concorda com os <a href="#">Termos de Uso</a> e a
+          <a href="#">Política de Privacidade</a>.
+        </p>
+
+        <p style="font-weight: normal;">
+          Já tem uma conta? <a href="/Front-endf-main/login.html">Entrar</a><br />
+          Esqueceu sua senha? <a href="register.html">Recuperar senha</a>
+        </p>
+      </form>
     </div>
 
-    <script>
-        const form = document.querySelector('form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            window.location.href = '/Front-endf-main/Pages/index.html';
-        });
-        const name = document.querySelector('input[type="text"]');
-        const email = document.querySelector('input[type="email"]');
-        const password = document.querySelector('input[type="password"]');
-        const button = document.querySelector('button');
-        button.addEventListener('click', () => {
-            if (name.value === '' || email.value === '' || password.value === '') {
-                alert('Por favor, preencha todos os campos');
-            }
-        });
-    </script>
-</body>
+    <div class="image-side">
+      <img src="/Front-endf-main/src/img/boogeyman-2.jpg" alt="Imagem de fundo do cadastro" />
+    </div>
 
+  </div>
+
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.querySelector('input[placeholder="Nome"]');
+      const email = document.querySelector('input[placeholder="Email"]');
+      const password = document.querySelector('input[placeholder="Senha"]');
+
+      if (name.value === '' || email.value === '' || password.value === '') {
+        alert("Por favor, preencha todos os campos");
+        return;
+      }
+
+      // Simula redirecionamento após validação
+      window.location.href = "/Front-endf-main/Pages/index.html";
+    });
+  </script>
+</body>
 </html>

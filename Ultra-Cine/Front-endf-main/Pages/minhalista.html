@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Minha Lista - Ultra Vision</title>
+<link rel="stylesheet" href="/Front-endf-main/src/lista.css">
+<link rel="shortcut icon" href="/Front-endf-main/src/img/logo2.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <h1>Minha Lista</h1>
+    <a href="index.html">⬅ Voltar para o Início</a>
+  </header>
+
+  <main>
+    <div id="minha-lista"></div>
+  </main>
+
+  <script>
+    // Exibir lista em MinhaLista.html
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('minha-lista');
+      const lista = JSON.parse(localStorage.getItem('minhaLista')) || [];
+
+      if (lista.length === 0) {
+        container.innerHTML = '<p>Você ainda não adicionou nada à sua lista.</p>';
+        return;
+      }
+
+      lista.forEach(filme => {
+        const div = document.createElement('div');
+        div.classList.add('filme-item');
+        div.innerHTML = `
+          <img src="${filme.imagem}" alt="${filme.titulo}" />
+          <p>${filme.titulo}</p>
+          <button onclick="removerDaLista('${filme.titulo}')">Remover</button>
+        `;
+        container.appendChild(div);
+      });
+    });
+
+    function removerDaLista(titulo) {
+      let lista = JSON.parse(localStorage.getItem('minhaLista')) || [];
+      lista = lista.filter(filme => filme.titulo !== titulo);
+      localStorage.setItem('minhaLista', JSON.stringify(lista));
+      location.reload();
+    }
+  </script>
+</body>
+</html>
