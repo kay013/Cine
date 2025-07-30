@@ -440,7 +440,7 @@ header.navbar {
 
 .btn-assistir {
   background-color:rgba(183, 0, 255, 0.8);
-  color: #000;
+  color: #ffffff;
   padding: 10px 22px;
   border: none;
   font-weight: bold;
@@ -448,6 +448,7 @@ header.navbar {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-assistir:hover {
@@ -583,5 +584,4 @@ header.navbar {
   z-index: 2;
   pointer-events: none;
   background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-
 }
