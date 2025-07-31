@@ -17,7 +17,7 @@
     </button>
     <nav class="nav-links">
       <a href="index.html">Início</a>
-      <a href="MinhaLista.html">Todos</a>
+      <a href="todos.html">Ver Todos</a>
       <div class="dropdown">
         <button class="dropbtn">Gêneros ▾</button>
         <div class="dropdown-content">
@@ -39,26 +39,111 @@
   <section class="destaque">
   <div class="destaque-bg">
     <img src="/Front-endf-main/src/img/BLADERUNNERBANNER3.jpg" alt="Round 6" class="fundo">
+     <div class="overlay"></div>
+        <div class="slide-info">
+          <h2></h2>
+          <h1>SCI-FI<br><span>Explore os melhores filmes de Sci-fi disponíveis na plataforma Ultra Vision.</span></h1>
+          <a href="#filmes"><button class="btn-assistir">Ver todos os filmes relacionados</button></a>
+          <p></p>
+        </div>
+      </div>
   </div>
   <div class="bottom-gradient"></div>
 </section>
 
-<section class="filmes">
-    <div class="carousel-wrapper">>
-
-      <div class="filmes-lista" id="filmes-scroll">
-        <a href="#"><img src="/Front-endf-main/src/img/ghostintheshell.jpg" alt="Filme 6"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/circulodefogo.jpg" alt="Filme 1"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/godzilla.jpg" alt="Filme 3"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/opreço.jpeg" alt="Filme 6"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/whathappened.jpg" alt="Filme 6"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/elysium-poster.jpg" alt="Filme 2"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/chappie.jpg" alt="Filme 4"></a>
+<section class="filmes" id="filmes">
+    <div class="carousel-wrapper">
+      <button class="seta esquerda">&#10094;</button>
+      <div class="filmes-lista filmes-scroll">
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/bladerunner.jpg" alt="blade runner"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/circulodefogo.jpg" alt="circulo de fogo"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/godzilla.jpg" alt="godzilla"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/opreço.jpeg" alt="o preço do amanhã"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/duna1.jpg" alt="duna"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/jogadorn1poster.jpg" alt="jogador n1"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/ghostintheshell.jpg" alt="ghost in the shell"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/Underwater.jpg" alt="underwater"></a>
       </div>
-
+      <button class="seta direita">&#10095;</button>
     </div>
   </section>
 
-</body>
+  <section class="filmes">
+    <div class="carousel-wrapper">
+      <button class="seta esquerda">&#10094;</button>
+      <div class="filmes-lista filmes-scroll">
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/rebelmoon.jpg" alt="rebel moon"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/Não! Não Olhe! .jpg" alt="não não olhe"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/the-adam-project.jpg" alt="Filme 3"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/Duna.jpg" alt="duna"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/whathappened.jpg" alt="aonde está segunda"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/mazerunner1.jpeg" alt="maze runner"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/divergente.jpeg" alt="divergente"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/jogosvorazesposter.jpeg" alt="jogos vorazes"></a>
+      </div>
+      <button class="seta direita">&#10095;</button>
+    </div>
+  </section>
 
+  <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-search">
+      <input type="text" placeholder="Procure o que deseja assistir." class="footer-search-bar">
+      <button><i class="fi fi-rr-search"></i></button>
+    </div>
+    <div class="footer-logo">
+      <img src="/Front-endf-main/src/img/logo2.png" alt="Logo Ultra Vision">
+    </div>
+    <p class="footer-slogan">Cada filme, uma nova jornada.</p>
+  </div>
+</footer>
+
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const carrosseis = document.querySelectorAll('.carousel-wrapper');
+
+  carrosseis.forEach(wrapper => {
+    const filmesScroll = wrapper.querySelector('.filmes-scroll');
+    const btnEsquerda = wrapper.querySelector('.seta.esquerda');
+    const btnDireita = wrapper.querySelector('.seta.direita');
+    const scrollAmount = 300;
+
+    btnEsquerda.addEventListener('click', function () {
+      filmesScroll.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    btnDireita.addEventListener('click', function () {
+      filmesScroll.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  });
+});
+</script>
+
+<script>
+  function normalizarTexto(texto) {
+    return texto
+      .normalize("NFD") 
+      .replace(/[\u0300-\u036f]/g, "") 
+      .toLowerCase()
+      .trim();
+  }
+
+  const searchInputs = document.querySelectorAll(".search-bar, .footer-search-bar");
+  const filmes = document.querySelectorAll(".filme-item");
+
+  searchInputs.forEach(input => {
+    input.addEventListener("input", () => {
+      const filtro = normalizarTexto(input.value);
+
+      filmes.forEach(filme => {
+        const titulo = normalizarTexto(filme.querySelector("img").alt);
+        const corresponde = titulo.includes(filtro);
+        filme.style.display = corresponde ? "inline-block" : "none";
+      });
+    });
+  });
+</script>
+
+</body>
 </html>

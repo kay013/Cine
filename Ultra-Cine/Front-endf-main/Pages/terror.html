@@ -17,7 +17,7 @@
     </button>
     <nav class="nav-links">
       <a href="index.html">Início</a>
-      <a href="MinhaLista.html">Todos</a>
+      <a href="todos.html">Ver Todos</a>
       <div class="dropdown">
         <button class="dropbtn">Gêneros ▾</button>
         <div class="dropdown-content">
@@ -39,26 +39,116 @@
   <section class="destaque">
   <div class="destaque-bg">
     <img src="/Front-endf-main/src/img/boogeyman-2.jpg" alt="Round 6" class="fundo">
+     <div class="overlay"></div>
+        <div class="slide-info">
+          <h2></h2>
+          <h1>TERROR<br><span>Explore os melhores filmes de terror disponíveis na plataforma Ultra Vision.</span></h1>
+          <a href="#filmes"><button class="btn-assistir">Ver todos os filmes relacionados</button></a>
+          <p></p>
+        </div>
+      </div>
+
   </div>
   <div class="bottom-gradient"></div>
 </section>
 
-<section class="filmes">
-    <div class="carousel-wrapper">>
+<section class="filmes" id="filmes">
+    <div class="carousel-wrapper">
+      <button class="seta esquerda">&#10094;</button>
 
-      <div class="filmes-lista" id="filmes-scroll">
-        <a href="#"><img src="/Front-endf-main/src/img/invocaçãodomalposter.jpg" alt="Filme 6"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/fearstreet1666Part3.jpg" alt="Filme 1"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/HalloweenEnds.jpeg" alt="Filme 3"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/yourenext2.jpg" alt="Filme 6"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/whathappened.jpg" alt="Filme 6"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/elysium-poster.jpg" alt="Filme 2"></a>
-        <a href="#"><img src="/Front-endf-main/src/img/chappie.jpg" alt="Filme 4"></a>
+      <div class="filmes-lista filmes-scroll">
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/obixopapao.jpeg" alt="o bixo papão"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/invocaçãodomalposter.jpg" alt="invocação do mal"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/fearstreet1666Part3.jpg" alt="Rua do medo parte 3"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/HalloweenEnds.jpeg" alt="Halloween Ends"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/Insidious_ The Red Door.jpeg" alt="insidius"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/Fear street 1994.jpeg" alt="Rua do medo parte 1"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/Insidious_ Chapter 3.jpeg" alt="insidius 3"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/annabele.jpeg" alt="annabele"></a>
       </div>
+      <button class="seta direita">&#10095;</button>
 
     </div>
   </section>
 
-</body>
+  <section class="filmes">
+    <div class="carousel-wrapper">
+      <button class="seta esquerda">&#10094;</button>
 
+      <div class="filmes-lista filmes-scroll">
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/nun.jpg" alt="A freira"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/atividade-paranormal-3.jpg" alt="atividade paranormal 3"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/atividade-paranormal-4.jpg" alt="atividade paranormal 4"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/TheWitch.jpeg"alt="A Bruxa"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/Ogrito.jpeg" alt="o Grito"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/fearstreet1978.jpeg" alt="Rua do medo parte 2"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/X_ A Marca da Morte de 2022.jpeg" alt="x a marca da morte"></a>
+        <a href="#" class="filme-item"><img src="/Front-endf-main/src/img/pearl.jpeg" alt="Pearl"></a>
+      </div>
+      <button class="seta direita">&#10095;</button>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-search">
+      <input type="text" placeholder="Procure o que deseja assistir." class="footer-search-bar">
+      <button><i class="fi fi-rr-search"></i></button>
+    </div>
+    <div class="footer-logo">
+      <img src="/Front-endf-main/src/img/logo2.png" alt="Logo Ultra Vision">
+    </div>
+    <p class="footer-slogan">Cada filme, uma nova jornada.</p>
+  </div>
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const carrosseis = document.querySelectorAll('.carousel-wrapper');
+
+      carrosseis.forEach(wrapper => {
+        const filmesScroll = wrapper.querySelector('.filmes-scroll');
+        const btnEsquerda = wrapper.querySelector('.seta.esquerda');
+        const btnDireita = wrapper.querySelector('.seta.direita');
+        const scrollAmount = 300;
+
+        btnEsquerda.addEventListener('click', function () {
+          filmesScroll.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        btnDireita.addEventListener('click', function () {
+          filmesScroll.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+
+<script>
+  function normalizarTexto(texto) {
+    return texto
+      .normalize("NFD") 
+      .replace(/[\u0300-\u036f]/g, "") 
+      .toLowerCase()
+      .trim();
+  }
+
+  const searchInputs = document.querySelectorAll(".search-bar, .footer-search-bar");
+  const filmes = document.querySelectorAll(".filme-item");
+
+  searchInputs.forEach(input => {
+    input.addEventListener("input", () => {
+      const filtro = normalizarTexto(input.value);
+
+      filmes.forEach(filme => {
+        const titulo = normalizarTexto(filme.querySelector("img").alt);
+        const corresponde = titulo.includes(filtro);
+        filme.style.display = corresponde ? "inline-block" : "none";
+      });
+    });
+  });
+</script>
+
+
+</body>
 </html>
